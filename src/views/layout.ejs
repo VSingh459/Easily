@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="/layout.css">
+    <script src="https://kit.fontawesome.com/ce0b32a229.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="sec1">
+                <h4>easily</h4>
+                <button type="button" id="mo23">Home</button>
+                <button type="button" id="mon">Jobs</button>
+
+                <% if (user && user.role === 'recruiter') { %>
+                    <!-- Dropdown for logged-in recruiters -->
+                    <div class="dropdown">
+                        <button type="button" id="recruiterDropdown">
+                            <%= user.name %> <!-- Display recruiter’s name -->
+                            <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                        <div id="dropdownMenu" class="dropdown-content">
+                            <a href="/postJob">Post a New Job</a>
+                            <hr>
+                            <a href="/logout">Logout</a>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <!-- Default button for job seekers -->
+                    <button type="button" id="tue">Recruiter</button>
+                <% } %>
+            </div>
+
+            <div id="sec2">
+                <input type="text" class="search-box" placeholder="Search">
+                <button type="button">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <%- body %>
+    </main>
+
+    <script>
+        const user = '<%- JSON.stringify(user || {}) %>';
+    </script>
+    
+    
+    <script src="/layout.js"></script>
+</body>
+</html>
+
+
+

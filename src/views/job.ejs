@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Jobs</title>
+    <link rel="stylesheet" href="/job.css">
+</head>
+<body>
+    <main>
+        <h2>Available Jobs</h2>
+
+        <% if (jobs && jobs.length > 0) { %>
+            <% jobs.forEach((job, index) => { %>
+                <div id="jf">
+                    <div class="hh">
+                        <p>Actively Hiring</p>
+                        <span class="material-symbols-outlined">monitoring</span>
+                    </div>
+                    <p class="cnn"><%= job.cname %></p>
+                    <p class="fn">Tech <span class="fn1"><%= job.jname %></span></p>
+                    <span class="locI"><i class="fa-solid fa-location-dot"></i></span>
+                    <p class="loc"><%= job.desc %></p>
+                    <p class="sa"><%= job.salary %></p>
+
+                    <div class="skills">
+                        <% job.skills.forEach(skill => { %>
+                            <div class="skill-item">
+                                <p class="sk"><%= skill %></p>
+                            </div>
+                        <% }) %>
+                    </div>
+
+                    <!-- Use data-id to uniquely identify each job button -->
+                   <!-- job.ejs -->
+              <button type="button" class="vd" data-id="<%= job.id %>">View Details</button>
+
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No jobs available</p>
+        <% } %>
+    </main>
+    <script src="/job.js"></script>
+</body>
+</html>
+
+

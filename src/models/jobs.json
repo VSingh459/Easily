@@ -1,0 +1,19 @@
+[
+  {
+    "id": "a6978fd4-a67f-4f5d-a514-fbbbf7667248",
+    "cname": "ABC Technologies",
+    "field": "Tech",
+    "jname": "Java Developer",
+    "desc": "Brampton",
+    "salary": "$50000",
+    "skills": [
+      "JavaScript",
+      "Python",
+      "Java"
+    ],
+    "deadline": "2024-11-26",
+    "openings": "1",
+    "datePosted": "2024-11-16, 8:42:45 p.m.",
+    "recruiterId": "2d31bbb5-1b04-430a-a45c-bc27ebd4ff72"
+  }
+]

@@ -1,0 +1,218 @@
+main{
+    background-color: white;
+    width: 100%;
+    height: 90%;
+}
+
+#mm{
+    width: 40%;
+    height: 80%;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    left: 25%;
+    top: 7%;
+    border-radius: 10px;
+    box-shadow: -5px -5px 10px #181642
+}
+
+#upo{
+    width: 100%;
+    height: 10%;
+  
+}
+
+#upo p{
+    font-family: sans-serif;
+    font-size:xx-large;
+    color: grey;
+    font-weight: bold;
+    margin-left: 25%;
+    margin-top: 0;
+    position: relative;
+    top: 20px;
+  
+}
+
+/* DropDown Stuff Dropdown Stuff */
+
+.dro {
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    top: 20px;
+    left: 20px;
+    margin-bottom: 10px;
+}
+
+.droSel {
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.droSel p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.droCont {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.droCont div {
+    padding: 3px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.droCont div:hover {
+    background-color: #e0e0e0;
+}
+
+.dro.open .droCont {
+    display: block;
+}
+
+.actB{
+    box-shadow: 
+            -2px -2px 3px rgba(49, 201, 222, 0.3),
+            2px -2px 3px rgba(49, 201, 222, 0.3);
+            
+}
+
+#ejlo{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: block;
+    font-family: sans-serif;
+}
+
+#jLocation{
+    width: 90%;
+    margin-left: 20px;
+}
+
+#CompNN{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    left: 20px;
+    top: 10px;
+}
+
+#tName{
+    width: 345px;
+    margin-left: 10px;
+}
+
+#multF{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+#midTP{
+    border: 1px solid black;
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#totP{
+    width: 170px;
+}
+
+/* Skills Stuff Below */
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40%;
+    max-width: 300px;
+    margin: 20px auto;
+    max-height: 120px; /* Set max height to 400px */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+    left: -25px;
+    margin-top: 31px;
+
+}
+
+/* Style for each skill */
+.skill {
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+/* Selected skill style */
+.skill.selected {
+    background-color: #add8e6; /* Light blue */
+    border-color: #31C9DE;
+}
+
+/* Info text */
+.info {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    position: relative;
+    margin-left: 20px;
+    margin-top: -7px;
+    margin-bottom: 0
+    
+}
+
+#bgg{
+    display: flex;
+    flex-direction: row;
+    height: 170px;
+}
+
+#ddd{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#dead{
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+#poSub{
+    background-color: green;
+    color: white;
+    width: 300px;
+    height: 30px;
+    border: none;
+    margin-left: 120px;
+}
+
+

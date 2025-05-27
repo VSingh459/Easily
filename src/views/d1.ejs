@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/d1.css">
+    <title>Job Details - <%= job.jname %></title>
+</head>
+<body>
+<main>
+    <section id="upper">
+        <div class="oo">
+           <h3> Make it happen </h3>
+           <p id="sco"> with up to 100% <b>Scholarship</b></p>
+           <p><span><i class="fa-regular fa-calendar-days"></i></span> 11<sup>th</sup> - 12<sup>th</sup> July 23</p>
+           <button type="button" id="rn"> Register Now </button>
+        </div>
+
+        <div class="ph4">
+            <div class="b1">
+                <img src="../photo/bb1.png" alt="Boy1" class="b1PH" width="100" height="100">
+            </div>
+            <div class="b2">
+                <img src="../photo/g1.png" alt="Girl1" class="g1PH" width="100" height="100">
+            </div>
+            <div class="b3">
+                <img src="../photo/b2.png" alt="Boy2" class="b2PH" width="100" height="100">
+            </div>
+            <div class="b4">
+                <img src="../photo/susun.png" alt="Susun" class="suu" width="100" height="100">
+            </div>
+        </div>
+    </section>
+
+    <section id="low">
+        <p class="jtitle"><span id="fie"><%= job.jname %></span> <span id="uLine">Opportunity in <%= job.desc %> at</span> <%= job.cname %></p>
+        <div id="LD">
+            <div id="hirDel">
+                <div id="actH">
+                    <p> Actively hiring</p>
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <% if (isOwner) { %>
+                    <a href="/job/<%= job.id %>/edit">
+                        <i class="fa-solid fa-pen-to-square" style="margin-left: 10px;"></i>
+                    </a>
+                    <% if (isOwner) { %>
+                        <a href="#" onclick="deleteJob('<%= job.id %>'); return false;">
+                            <i class="fa-solid fa-trash" style="color: red; margin-left: 5px; cursor: pointer;" title="Delete Job"></i>
+                        </a>
+                    <% } %>
+                    
+                <% } %>
+            </div>
+           
+            <p id="z1"><%= job.cname %></p>
+            <p id="z2"><%= job.field %> - <%= job.jname %></p>
+            <p id="z3"><i class="fa-solid fa-map-pin"></i> <%= job.desc %></p>
+            <p id="z4"><i class="fa-solid fa-indian-rupee-sign"></i> <%= job.salary %></p>
+            <p id="z5"><img src="../photo/dLine.png" alt="Deadline" width="20" height="20"> Apply By 30 August 2023</p>
+            <p id="z6"><i class="fa-solid fa-chart-simple"></i> Number of Openings 5</p>
+            
+            <% if (isOwner) { %>
+                <a href="/applicants?jobId=<%= job.id %>" id="z7-link">
+                    <p id="z7"><i class="fa-solid fa-user-group"></i> View Applicants</p>
+                </a>
+            <% } else { %>
+                <p id="z7" style="color: gray;">Only the recruiter can view applicants.</p>
+            <% } %>
+            
+
+            <div class="skills-container">
+                <% job.skills.forEach(skill => { %>
+                    <div class="skill-box"><%= skill %></div>
+                <% }) %>
+            </div>
+            <button type="button" class="APN">Apply Now</button>
+            <button type="button" class="APD"><%= job.datePosted %></button>
+
+        </div>
+    </section>
+</main>
+
+<!-- Modal Code -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <div id="he2">
+            <p> Apply Easily </p>
+            <span id="closeModal" class="close">&times;</span>
+        </div>
+
+        <!-- Form Section -->
+        <form id="formII" action="/submit-form" method="POST">
+            <input type="hidden" name="jobId" value="<%= job ? job.id : '' %>">
+            <p>Apply in less than 1 minute</p>
+            <!-- Display Error or Success Messages -->
+            <% if (errorMessage) { %>
+                <div class="error-message"><%= errorMessage %></div>
+            <% } %>
+            <% if (successMessage) { %>
+                <div class="success-message"><%= successMessage %></div>
+            <% } %>
+
+            <div class="mkl">
+                <label class="nBox">Name</label>
+                <input type="text" class="iBox" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="mkl">
+                <label class="nBox">Email</label>
+                <input type="email" class="iBox" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="mkl">
+                <label class="nBox">Contact</label>
+                <input type="text" class="iBox" name="contact" placeholder="+91 _ _ _ _ _ _ _ _" required>
+            </div>
+
+            <!-- File Upload Stuff -->
+
+            <div class="a1">
+                <div class="a2">
+                    <label for="resume">Resume</label>
+                </div>
+                <div class="a3">
+                    <label class="a4">
+                        <input type="file" id="a5" name="resume" hidden>
+                        Choose File
+                    </label>
+                    <div class="a6">
+                        No File Chosen
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+
+            <button type="submit" id="subIT">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script src="/d1.js"></script>
+</body>
+</html>

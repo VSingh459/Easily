@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="/postJob.css">
+</head>
+<body>
+    <main>
+        <section id="mm">
+            <div id="upo">
+                <p>Post a New Job</p>
+            </div>
+            <form id="pFo" action="/post-job" method="POST">
+                <!-- Job Category Dropdown -->
+                <div class="dro" id="jobDro">
+                    <div class="droSel"> 
+                        <p>Select Job Category</p>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <div class="droCont">
+                        <div>Tech</div>
+                        <div>Non-Tech</div>
+                    </div>
+                </div>
+
+                <!-- Job Designation Dropdown -->
+                <div class="dro" id="jobDro">
+                    <div class="droSel"> 
+                        <p>Select Job Designation</p>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <div class="droCont"></div>
+                </div>
+
+                <!-- Hidden inputs to capture dropdown selections -->
+                <input type="hidden" id="categoryInput" name="category">
+                <input type="hidden" id="designationInput" name="designation">
+
+                <!-- Job Location -->
+                <label for="fname" id="ejlo">Enter Job Location</label>
+                <input type="text" id="jLocation" name="jLoc" required>
+
+                <!-- Company Name -->
+                <div id="CompNN">
+                    <label>Company Name</label>
+                    <input type="text" name="cName" id="tName" required>
+                </div>
+
+                <!-- Salary and Total Openings -->
+                <div id="multF">
+                    <input type="text" name="salary" id="sal" placeholder="Enter Salary" required>
+                    <div id="midTP">
+                        <label id="Totu">Total Positions</label>
+                    </div>
+                    <input type="text" name="tPos" id="totP" placeholder="Total Openings" required>
+                </div>
+
+                <!-- Skills Selection -->
+                <div id="bgg">
+                    <div class="skills-container">
+                        <p class="info">Select up to 6 skills.</p>
+                        <div class="skill">JavaScript</div>
+                        <div class="skill">Python</div>
+                        <div class="skill">Java</div>
+                        <div class="skill">HTML</div>
+                        <div class="skill">CSS</div>
+                        <div class="skill">React</div>
+                        <div class="skill">Node.js</div>
+                        <div class="skill">SQL</div>
+                        <div class="skill">Git</div>
+                        <div class="skill">Docker</div>
+                    </div>
+                    <input type="hidden" id="skillsInput" name="skills">
+                </div>
+
+                <!-- Deadline -->
+                <div id="ddd">
+                    <label for="deadline">Apply By</label>
+                    <input type="date" id="dead" name="deadline" required>
+                </div>
+
+                <button type="submit" id="poSub">Submit</button>
+            </form>
+        </section>
+    </main>
+    
+    <script src="/postJob.js"></script>
+</body>
+</html>

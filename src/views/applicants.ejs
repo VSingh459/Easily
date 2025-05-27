@@ -1,0 +1,38 @@
+
+
+<link rel="stylesheet" href="/applicants.css">
+<main>
+    <h2>Job Applicants</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Resume</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (applicants && applicants.length > 0) { %>
+                <% applicants.forEach((applicant, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= applicant.name %></td>
+                        <td><%= applicant.email %></td>
+                        <td><%= applicant.contact %></td>
+                        <td>
+                            <a href="<%= applicant.resumePath %>" target="_blank">
+                                <button type="button">View</button>
+                            </a>
+                        </td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr>
+                    <td colspan="5">No applicants available.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</main>

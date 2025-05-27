@@ -1,0 +1,196 @@
+<main style="background-color: white; width: 100%; height: 90%;">
+    <section id="mm">
+        <div id="upo" style="width: 40%; height: 80%; background-color: white; border: 1px solid black; position: relative; left: 25%; top: 7%; border-radius: 10px; box-shadow: -5px -5px 10px #181642;">
+            <p style="font-family: sans-serif; font-size: xx-large; color: grey; font-weight: bold; margin-left: 25%; margin-top: 0; position: relative; top: 20px;">Update Job</p>
+        </div>
+        <form id="pFo" action="/updatejob" method="POST">
+            <!-- Job Category Dropdown -->
+            <div class="dro" id="jobDro" style="position: relative; display: inline-block; width: 90%; top: 20px; left: 20px; margin-bottom: 10px;">
+                <div class="droSel" style="width: 100%; font-size: 16px; padding: 5px; cursor: pointer; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 3px; display: flex; justify-content: space-between;">
+                    <p style="margin-top: 0; margin-bottom: 0;">Select Job Category</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="droCont" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ccc; width: 100%; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); z-index: 1;">
+                    <div style="padding: 3px; cursor: pointer; text-align: left;">Tech</div>
+                    <div style="padding: 3px; cursor: pointer; text-align: left;">Non-Tech</div>
+                </div>
+            </div>
+
+            <!-- Job Designation Dropdown -->
+            <div class="dro" id="jobDro" style="position: relative; display: inline-block; width: 90%; top: 20px; left: 20px; margin-bottom: 10px;">
+                <div class="droSel" style="width: 100%; font-size: 16px; padding: 5px; cursor: pointer; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 3px; display: flex; justify-content: space-between;">
+                    <p style="margin-top: 0; margin-bottom: 0;">Select Job Designation</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="droCont" style="display: none;"></div>
+            </div>
+
+            <!-- Hidden inputs to capture dropdown selections -->
+            <input type="hidden" id="categoryInput" name="category">
+            <input type="hidden" id="designationInput" name="designation">
+
+            <!-- Job Location -->
+            <label for="fname" id="ejlo" style="margin-top: 20px; margin-left: 20px; display: block; font-family: sans-serif;">Enter Job Location</label>
+            <input type="text" id="jLocation" name="jLoc" required style="width: 90%; margin-left: 20px;">
+
+            <!-- Company Name -->
+            <div id="CompNN" style="display: flex; justify-content: flex-start; position: relative; left: 20px; top: 10px;">
+                <label>Company Name</label>
+                <input type="text" name="cName" id="tName" required style="width: 345px; margin-left: 10px;">
+            </div>
+
+            <!-- Salary and Total Openings -->
+            <div id="multF" style="display: flex; justify-content: flex-start; position: relative; top: 20px; left: 20px;">
+                <input type="text" name="salary" id="sal" placeholder="Enter Salary" required>
+                <div id="midTP" style="border: 1px solid black; width: 120px; height: 30px; display: flex; justify-content: center; align-items: center;">
+                    <label id="Totu">Total Positions</label>
+                </div>
+                <input type="text" name="tPos" id="totP" placeholder="Total Openings" required style="width: 170px;">
+            </div>
+
+            <!-- Skills Selection -->
+            <div id="bgg" style="display: flex; flex-direction: column; gap: 10px; width: 40%; max-width: 300px; margin: 20px auto; max-height: 120px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; border-radius: 5px; position: relative; left: -25px; margin-top: 31px;">
+                <p class="info" style="font-size: 14px; font-weight: bold; color: #666; position: relative; margin-left: 20px; margin-top: -7px; margin-bottom: 0;">Select up to 6 skills.</p>
+                <div class="skill" style="font-size: 16px; text-align: center; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; background-color: #f9f9f9; transition: background-color 0.3s ease;">JavaScript</div>
+                <div class="skill" style="font-size: 16px; text-align: center; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; background-color: #f9f9f9; transition: background-color 0.3s ease;">Python</div>
+                <div class="skill" style="font-size: 16px; text-align: center; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; background-color: #f9f9f9; transition: background-color 0.3s ease;">Java</div>
+                <!-- More skills here -->
+                <input type="hidden" id="skillsInput" name="skills">
+            </div>
+
+            <!-- Deadline -->
+            <div id="ddd" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <label for="deadline">Apply By</label>
+                <input type="date" id="dead" name="deadline" required style="margin-left: 5px; margin-right: 20px;">
+            </div>
+
+            <button type="submit" id="poSub" style="background-color: green; color: white; width: 300px; height: 30px; border: none; margin-left: 120px;">Submit</button>
+        </form>
+    </section>
+</main>
+
+    
+    <!-- <script src="/updateJob.js"> </script> -->
+
+    <script>
+        const dropdowns = document.querySelectorAll(".dro");
+
+// Define options for job designations
+const techOptions = ["MERN Stack Developer", "DevOps", "Java Developer", "Cyber Analyst", "Software Engineer"];
+const nonTechOptions = ["Cook", "Manager", "Driver", "Waiter", "Gas Station Attendant", "Doctor"];
+
+// Get existing values from hidden fields, if present
+const existingCategory = document.getElementById("categoryInput").value;
+const existingDesignation = document.getElementById("designationInput").value;
+const existingSkills = document.getElementById("skillsInput").value ? document.getElementById("skillsInput").value.split(", ") : [];
+
+dropdowns.forEach((dropdown, index) => {
+    const droSel = dropdown.querySelector(".droSel");
+    const dropdownSelection = droSel.querySelector("p");
+    const dropdownOptions = dropdown.querySelectorAll(".droCont div");
+
+    // Toggle dropdown open/close when clicking on `.droSel`
+    droSel.addEventListener("click", function (e) {
+        dropdowns.forEach(d => {
+            if (d !== dropdown) {
+                d.classList.remove("open");
+                d.querySelector(".droSel").classList.remove("actB");
+            }
+        });
+        dropdown.classList.toggle("open");
+        droSel.classList.toggle("actB");
+        e.stopPropagation();
+    });
+
+    // Set initial category or designation if updating an existing job
+    if (index === 0 && existingCategory) {
+        dropdownSelection.textContent = existingCategory;
+    } else if (index === 1 && existingDesignation) {
+        dropdownSelection.textContent = existingDesignation;
+    }
+
+    // Handle the first dropdown selection to update the second dropdown
+    if (index === 0) {
+        dropdownOptions.forEach(option => {
+            option.addEventListener("click", function (e) {
+                dropdownSelection.textContent = option.textContent;
+                dropdown.classList.remove("open");
+                droSel.classList.remove("actB");
+                e.stopPropagation();
+
+                // Update the second dropdown based on the selection
+                const secondDropdown = dropdowns[1];
+                const secondDroCont = secondDropdown.querySelector(".droCont");
+                const secondSelection = secondDropdown.querySelector(".droSel p");
+                secondDroCont.innerHTML = ""; // Clear existing options
+
+                const optionsToUse = option.textContent === "Non-Tech" ? nonTechOptions : techOptions;
+
+                // Add the new options to the second dropdown
+                optionsToUse.forEach(opt => {
+                    const newOption = document.createElement("div");
+                    newOption.textContent = opt;
+                    newOption.addEventListener("click", function (e) {
+                        secondSelection.textContent = newOption.textContent;
+                        secondDropdown.classList.remove("open");
+                        secondDropdown.querySelector(".droSel").classList.remove("actB");
+                        e.stopPropagation();
+                    });
+                    secondDroCont.appendChild(newOption);
+                });
+
+                // Reset the second dropdown placeholder or set it to existing value
+                secondSelection.textContent = existingDesignation || "Select Job Designation";
+            });
+        });
+    }
+});
+
+// Close dropdown if clicked outside of it
+document.addEventListener("click", function (e) {
+    dropdowns.forEach(dropdown => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("open");
+            dropdown.querySelector(".droSel").classList.remove("actB");
+        }
+    });
+});
+
+// Skills selection
+const skills = document.querySelectorAll(".skill");
+let selectedSkills = 0;
+const maxSkills = 6;
+
+// Select skills based on existing values if updating a job
+skills.forEach(skill => {
+    if (existingSkills.includes(skill.textContent)) {
+        skill.classList.add("selected");
+        selectedSkills++;
+    }
+    skill.addEventListener("click", () => {
+        // Deselect if already selected
+        if (skill.classList.contains("selected")) {
+            skill.classList.remove("selected");
+            selectedSkills--;
+        } else if (selectedSkills < maxSkills) {
+            // Select if max not reached
+            skill.classList.add("selected");
+            selectedSkills++;
+        } else {
+            alert("You can select a maximum of 6 skills.");
+        }
+    });
+});
+
+// Form submission to gather dropdown and selected skills data
+document.getElementById("pFo").addEventListener("submit", function () {
+    const category = document.querySelectorAll(".dro")[0].querySelector(".droSel p").textContent;
+    const designation = document.querySelectorAll(".dro")[1].querySelector(".droSel p").textContent;
+    const skills = Array.from(document.querySelectorAll(".skill.selected")).map(skill => skill.textContent);
+
+    document.getElementById("categoryInput").value = category;
+    document.getElementById("designationInput").value = designation;
+    document.getElementById("skillsInput").value = skills.join(", ");
+});
+    </script>
+

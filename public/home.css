@@ -1,0 +1,567 @@
+
+/* Main Section Main Section */
+
+main{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    width: 100%;
+    height: 90%;
+}
+
+
+/* Middle Section Middle Section */
+
+#middle{
+    position: relative;
+    width: 40%;
+    height: 20%;
+    margin-top: 15%;
+    left: 8%;
+}
+
+.mh{
+    color: #c42e80;
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.rep {
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-weight: 200;
+    opacity: 1; /* Start with the paragraph visible */
+    position: relative;
+    animation: fadeSlideOutIn 5s infinite; /* Apply the animation */
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeSlideOutIn {
+    0% {
+        opacity: 1;
+        left: 0;
+    }
+    20% {
+        opacity: 0;
+        left: 100px; /* Fade out while moving right */
+    }
+    50% {
+        opacity: 0;
+        left: -100px; /* Move off-screen to the left */
+    }
+    70% {
+        opacity: 1;
+        left: 0; /* Fade in while moving back to original position */
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}  
+
+.ff{
+    color: white;
+}
+
+#middle button{
+    background-color: #db237b;
+    border: none;
+    display: inline-block;
+    color: lightgray;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 130px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+/* Diagonal Bars Section Diagonal Bars Section */
+
+#diagonalBars{
+    position: relative;
+    width: 40%;
+    height: 85%;
+    
+}
+
+.rec1 {
+    position: relative;
+    width: 100px; 
+    height: 500px; 
+    border-radius: 60px; 
+    transform: rotate(-45deg); 
+    background: linear-gradient(to bottom, #d8c1f2, #8970be);
+    bottom: 13%;
+    right: -17%;
+}
+
+.rec2 {
+    position: relative;
+    width: 100px; 
+    height: 450px; 
+    border-radius: 60px; 
+    transform: rotate(-45deg); 
+    background-color: #6d86bb;
+    bottom: 62%;
+    left: 30%;
+    
+}
+
+.dia1{
+    position: relative;
+    width: 20px; 
+            height: 20px; 
+            background-color: #d8c3f3; 
+            border-radius: 50%;
+            bottom: 163%;
+            left: 3%;
+}
+
+.dia2{
+    position: relative;
+    width: 10px; 
+            height: 10px; 
+            background-color: #a3a1d7; 
+            border-radius: 50%;
+            bottom: 175%;
+            left: -5%;
+}
+
+.dia3{
+    position: relative;
+    width: 20px; 
+            height: 20px; 
+            background-color: #f7d257; 
+            border-radius: 50%;
+            bottom: 185%;
+            left: 75%;
+}
+
+.dia4{
+    position: relative;
+    width: 10px; 
+            height: 10px; 
+            background-color: #98a9e5; 
+            border-radius: 50%;
+            bottom: 208%;
+            left: 60%;
+}
+
+/* Absolute Photo Absolute Photo */
+
+#photo{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    height: 350px;
+    background-color: #fbfbfb;
+    left: 60%;
+    top: 20%;
+    border-radius: 20px;
+}
+
+.barCh{
+    position: absolute;
+    z-index: 3;
+    width: 60px;
+    height: 60px;
+    top: 19%;
+    left: 73%;
+
+}
+
+#resP {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    top: 50%;
+    left: 62%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #e8e3e7;
+}
+
+.sc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95px; 
+    height: 12px;
+    background-color: #e4e6e4;
+    border-radius: 10px; 
+    padding: 0 10px;
+    box-sizing: border-box;
+    z-index: 3;
+    position: absolute;
+    top: 55%;
+    left: 2%;
+}
+
+.sl {
+    width: 80px;
+    height: 5px;
+    background-color: #676df2;
+    border-radius: 5px; 
+}
+
+.sl1 {
+    width: 80px;
+    height: 5px;
+    background-color: #e1c8f7;
+    border-radius: 5px; 
+}
+
+.sl2 {
+    width: 80px;
+    height: 5px;
+    background-color: #322531;
+    border-radius: 5px; 
+}
+
+/* Black dot */
+.slider-dot {
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    border-radius: 50%; 
+    margin-left: 2px; 
+}
+
+.linker{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 10%;
+    left: 5%;
+}
+
+.nn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #211135;
+    width: 100%;
+    height: 10%;
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 18px; 
+    border-bottom-left-radius: 0; 
+    border-bottom-right-radius: 0;
+}
+
+.cir{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #aa454b;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.cir1{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #694a23;
+    margin-right: 5px;
+}
+
+.cir2{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #457c3d;
+    margin-right: 5px;
+}
+
+.cicle{
+    background-color: #f1b911;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin-bottom: -20%;
+    position: relative;
+    
+    z-index: 1;
+}
+
+.girl-photo {
+    width: 146px; 
+    height: 140px;
+    position: absolute;
+    bottom: 0.5px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; 
+    border-radius: 50%;
+}
+
+
+#photo p{
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: -35px;
+    margin-top: 5px;
+}
+
+.line{
+    width: 150px;
+    height: 10px;
+    background-color: #d7d9da;
+    border-radius: 5px;
+    margin-bottom: -36px;
+}
+
+.line1{
+    width: 100px;
+    height: 10px;
+    background-color: #d7d9da;
+    border-radius: 5px;
+    margin-bottom: -30px;
+}
+
+.iconic{
+    width: 80%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.icon-circle {
+    width: 25px;
+    height: 25px;
+    background-color: #cbcdcf;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ov{
+    width: 40px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #d64d1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ov span{
+    color: lightgrey;
+}
+
+.icon-circle2 {
+    width: 30px;
+    height: 30px;
+    background-color: #cbcdcf;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Registration/Login Modal/Form/Pop-up */
+
+  .modal {
+    display: none;
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+  }
+  
+  
+  
+  /* Form Group Styling */
+
+  #abc{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+  }
+
+  #abc p {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 14px;
+    margin-left: 12px;
+    font-family: sans-serif;
+    font-size: large;
+
+  }
+
+.mkl{
+    display: flex;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.nBox{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 30px;
+    background-color: #E8E8E8;
+    font-family: sans-serif;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.iBox{
+    width: 200px;
+    height: 26px;
+    border-radius: 0;
+    border: 1px solid lightgray;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 10px;
+    transition: border-color 0.3s ease;
+}
+
+.iBox:focus{
+    border: 1px solid #00FFFF;
+    outline: none;
+}
+ 
+  
+  /* Register Button Styling */
+  .register-btn {
+    width: 40%;
+    padding: 10px;
+    background-color: #db237b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 15px;
+  }
+  
+  .register-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .modal-footer {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+  }
+
+.ico{
+    width: 20px;
+    height: 20px;
+    margin-top: 16px;
+}
+
+.modal-footer p {
+    font-size: 15px;
+    margin-left: 5px;
+  }
+  
+  .login-btn {
+    width: 60px;
+    height: 30px;
+    background:#457c3d;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    border-radius: 4px;
+  }
+
+  /* Login Model Stuff Below */
+
+#loginHeader{
+   
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+#loginHeader p{
+    font-family: sans-serif;
+    margin-left: 5px;
+}
+
+.kloso{
+    margin-right: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fp{
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.logig{
+    margin-left: 85px;
+    margin-bottom: 10px;
+    background-color: #457c3d;
+    border: none;
+    width: 80px;
+    height: 35px;
+    color: white;
+}
+
+
+  
+
+  
+
+ 
